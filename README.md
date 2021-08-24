@@ -1,7 +1,7 @@
 # SIFT feature matching using OpenCV
 
 ## Introduction
-To exemplify the process of matching SIFT features coming from two frames of the same image, the following steps are coded:
+To exemplify the process of matching SIFT features coming from two frames of the same scenario, the following steps are coded:
 
 1. Load two frames of a scene.
     - Images are converted to gray scale to ease computation
