@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-## TODO:
+## DONE:
 #   (1) Load two frames of a scene
 #       - We convert to gray scale to ease computation and visualize
 #   (2) Compute PoI Detection and Description
@@ -72,8 +72,10 @@ keypoints1,keypoints2,descriptors1,descriptors2 = Run_SIFT(img1_gs,img2_gs)
 bf = cv.BFMatcher()
 # We match descriptors using Brute-Force Matching and sort them by similarity distance
 matches = bf.knnMatch(descriptors1,descriptors2,k=2)
+print('BFMatcher')
+print('Found %s unfiltered matches'% len(matches))
 matches = FilterMatches(matches,mode='ratio')
-print('Found %s matches.'% len(matches))
+print('Selected %s matches.'% len(matches))
 # We draw first 9 matches
 img_matches = img1
 img_matches = cv.drawMatchesKnn(img1=img1_gs,img2=img2_gs,keypoints1=keypoints1,keypoints2=keypoints2,
@@ -92,10 +94,12 @@ srch_prms = dict(checks=50) # search parameters, it could be an empty dictionary
 flann = cv.FlannBasedMatcher(idx_prms,srch_prms)
 matches = flann.knnMatch(descriptors1,descriptors2,k=2)
 # mask to filter good matches
-good_matches = [[0,0] for i in range(len(matches))]
+#good_matches = [[0,0] for i in range(len(matches))]
+print('FLANN Matcher')
+print('Found %s unfiltered matches'% len(matches))
 matches = FilterMatches(matches,mode='ratio')
-print('Found %s matches.'% len(matches))
-# We draw first 9 matches
+print('Selected %s matches.'% len(matches))
+# We draw first show_n_matches matches
 img_matches = img1
 img_matches = cv.drawMatchesKnn(img1=img1_gs,img2=img2_gs,keypoints1=keypoints1,keypoints2=keypoints2,
                                 matches1to2=matches[:show_n_matches],outImg=None,
