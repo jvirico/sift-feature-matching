@@ -34,9 +34,9 @@ Fig. 2. Point correspondances using FLANN matcher.
 
 ## Cite this work
     J. Rico (2021) SIFT feature matching using OpenCV.
-    [Source code](https://github.com/jvirico/normality-tests-pvalues-boxcoxtransformations)  
+    [Source code](https://github.com/jvirico/sift-feature-matching)  
 
 
 ### References
-[1] - [OpenCV Documentation. Feature Matching.](https://github.com/jvirico/sift-feature-matching)  
+[1] - [OpenCV Documentation. Feature Matching.](https://docs.opencv.org/4.5.2/dc/dc3/tutorial_py_matcher.html)  
 [2] - Bian, Jia-Wang & Lin, wen-yan & Liu, Yun & Zhang, Le & Yeung, Sai-Kit & Cheng, Ming-Ming & Reid, Ian. (2020). GMS: Grid-Based Motion Statistics for Fast, Ultra-robust Feature Correspondence. International Journal of Computer Vision. 128. 10.1007/s11263-019-01280-3.  
